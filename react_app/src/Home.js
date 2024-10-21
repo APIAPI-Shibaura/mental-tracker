@@ -1,4 +1,6 @@
+import { signInWithPopup } from "firebase/auth";
 import React from "react";
+import { auth, provider } from "firebase/auth";
 
 function Home() {
   return (
@@ -14,6 +16,7 @@ export default Home;
 function SignInButton() {
   const signInWithGoogle = () => {
     //Sign in with Google by firebase
+    signInWithPopup(auth, provider);
   };
 
   return (
