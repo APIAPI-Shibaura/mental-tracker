@@ -1,6 +1,6 @@
 import { signInWithPopup } from "firebase/auth";
 import React from "react";
-import { auth, provider } from "firebase/auth";
+import { auth, provider } from "./firebase";
 
 function Home() {
   return (
