@@ -1,10 +1,11 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Home from "./Home";
 
 function App() {
   return (
     <div className="App">
-      <button>試験</button>
+      <h1>Firebaseでログイン機能を実装しよう</h1>
+      <Home />
     </div>
   );
 }
