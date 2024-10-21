@@ -1,11 +1,20 @@
 import { signInWithPopup } from "firebase/auth";
 import React from "react";
 import { auth, provider } from "./firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 function Home() {
+  const [user] = useAuthState(auth);
   return (
     <div>
-      <SignInButton />
+      {user ? (
+        <>
+          <UserInfo />
+          <SignOutButton />
+        </>
+      ) : (
+        <SignInButton />
+      )}
     </div>
   );
 }
@@ -24,4 +33,17 @@ function SignInButton() {
       <p>グーグルでサインイン</p>
     </button>
   );
+}
+
+//Signout in with Google
+function SignOutButton() {
+  return (
+    <button onClick={() => auth.signOut()}>
+      <p>サインアウト</p>
+    </button>
+  );
+}
+
+function UserInfo() {
+  return <>ユーザー情報</>;
 }
