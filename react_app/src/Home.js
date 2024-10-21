@@ -45,9 +45,5 @@ function SignOutButton() {
 }
 
 function UserInfo() {
-  return (
-    <div>
-      <p>ユーザー情報</p>
-    </div>
-  );
+  return;
 }
